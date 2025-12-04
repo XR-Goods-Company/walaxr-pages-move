@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Orbitron', 'sans-serif'],
+        display: ['Poppins', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
       },
       colors: {
@@ -81,17 +81,8 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      backgroundImage: {
-        'gradient-hero': 'var(--gradient-hero)',
-        'gradient-card': 'var(--gradient-card)',
-        'gradient-button': 'var(--gradient-button)',
-        'gradient-accent': 'var(--gradient-accent)',
-      },
-      boxShadow: {
-        'glow': 'var(--shadow-glow)',
-        'glow-lg': 'var(--shadow-glow-lg)',
-        'card': 'var(--shadow-card)',
-      },
+      backgroundImage: {},
+      boxShadow: {},
     },
   },
   plugins: [require("tailwindcss-animate")],

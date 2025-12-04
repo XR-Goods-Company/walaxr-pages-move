@@ -1,87 +1,82 @@
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
 const reviews = [
   {
-    name: "Anne Whitfield",
+    title: "Love the shirts and the color",
+    content: "They are very comfortable😊",
+    author: "Anne Whitfield",
+    product: "YOLO Ladies Wicking Tee",
     date: "02/05/2023",
-    rating: 5,
-    text: "Love the shirts and the color. They are very comfortable!",
   },
   {
-    name: "Diane Wolverton",
+    title: "Above and Beyond",
+    content: "Great products and amazing customer service! My great-nephew LOVED having a real dinosaur in his house walking around. The Christmas ornament has Santa and his reindeer flying through the air, which the boys also loved.",
+    author: "Diane Wolverton",
     date: "01/13/2023",
-    rating: 5,
-    text: "Above and Beyond! Great products and amazing customer service! The dinosaur sticker was a hit with my great-nephew - he LOVED having a real dinosaur walking around in his house.",
   },
   {
-    name: "Ellen W.",
-    date: "09/27/2022",
-    rating: 5,
-    text: "These shirts are MAGICAL!!! Using your phone and the QR code, you're off into a world of elegant, beautiful fantasy! My friends all say: 'where can I get one??'",
-  },
-  {
-    name: "Basia Query",
-    date: "02/23/2022",
-    rating: 5,
-    text: "This is the coolest invention/idea ever. I am so obsessed with my custom long sleeve XR shirt. Very very amazing invention!!",
-  },
-  {
-    name: "Salma M.",
-    date: "02/06/2022",
-    rating: 5,
-    text: "This definitely does not disappoint and one is not enough! Great customer service, fantastic quality and a unique creative idea! Everyone will want one!",
-  },
-  {
-    name: "Roberta",
+    title: "So innovative!",
+    content: "Gave the dinosaur shirt to my young adult nephew as a present. It's wonderful!",
+    author: "Roberta",
     date: "12/21/2022",
-    rating: 5,
-    text: "So innovative! Gave the dinosaur shirt to my young adult nephew as a present. It's wonderful!",
+  },
+  {
+    title: "These shirts are MAGICAL!!!",
+    content: "At first glance, they are really cool - the different designs, colors and it all comes on a good cotton fabric. BUT, then the surprise! Using your phone and the QR code subtly embedded in the design, you're off into a world of elegant, beautiful fantasy!",
+    author: "Ellen W. Aka \"Mahga\"",
+    product: "XR Reality Collection: Year of the Dragon",
+    date: "09/27/2022",
+  },
+  {
+    title: "So creative!",
+    content: "Everyone loves them! Even the adults.",
+    author: "Joana Thorpe",
+    date: "08/16/2022",
+  },
+  {
+    title: "AMAZING PRODUCT",
+    content: "This is the coolest invention/idea ever. I am so obsessed with my custom long sleeve XR shirt. Very very amazing invention!!",
+    author: "Basia Query",
+    date: "02/23/2022",
   },
 ];
 
+function StarRating() {
+  return (
+    <div className="flex gap-0.5">
+      {[...Array(5)].map((_, i) => (
+        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+      ))}
+    </div>
+  );
+}
+
 export function Reviews() {
   return (
-    <section id="reviews" className="py-24 relative">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-            What Customers <span className="text-gradient">Say</span>
+        <div className="text-center mb-12">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Hear from other customers
           </h2>
-          <div className="flex items-center justify-center gap-2 mb-4">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-6 h-6 fill-primary text-primary" />
-            ))}
+          <div className="flex items-center justify-center gap-2">
+            <StarRating />
+            <span className="text-sm text-muted-foreground">from 10 reviews</span>
           </div>
-          <p className="text-muted-foreground">Based on 10+ verified reviews</p>
         </div>
 
-        {/* Reviews Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((review, index) => (
-            <div
-              key={index}
-              className="card-glow bg-card border border-border rounded-xl p-6 relative"
-            >
-              {/* Quote Icon */}
-              <Quote className="w-8 h-8 text-primary/20 absolute top-4 right-4" />
-
-              {/* Stars */}
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
-                ))}
-              </div>
-
-              {/* Review Text */}
-              <p className="text-muted-foreground text-sm mb-4 line-clamp-4">
-                "{review.text}"
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center justify-between border-t border-border pt-4">
-                <span className="font-medium text-sm">{review.name}</span>
-                <span className="text-xs text-muted-foreground">{review.date}</span>
+            <div key={index} className="bg-secondary p-6 rounded-lg">
+              <StarRating />
+              <h3 className="font-semibold text-foreground mt-3 mb-2">{review.title}</h3>
+              <p className="text-sm text-muted-foreground mb-4 line-clamp-4">{review.content}</p>
+              <div className="text-sm">
+                <p className="font-medium text-foreground">{review.author}</p>
+                {review.product && (
+                  <p className="text-primary text-xs mt-1">{review.product}</p>
+                )}
+                <p className="text-muted-foreground text-xs mt-1">{review.date}</p>
               </div>
             </div>
           ))}

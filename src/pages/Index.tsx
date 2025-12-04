@@ -1,9 +1,13 @@
+import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Products } from "@/components/Products";
+import { PlanetExploration } from "@/components/PlanetExploration";
 import { HowItWorks } from "@/components/HowItWorks";
+import { BestSellers } from "@/components/BestSellers";
 import { Reviews } from "@/components/Reviews";
 import { FeaturedRetailer } from "@/components/FeaturedRetailer";
+import { FunForAllAges } from "@/components/FunForAllAges";
 import { Newsletter } from "@/components/Newsletter";
 import { Footer } from "@/components/Footer";
 import { Helmet } from "react-helmet-async";
@@ -19,13 +23,17 @@ const Index = () => {
       </Helmet>
       
       <div className="min-h-screen">
+        <AnnouncementBar />
         <Header />
         <main>
           <Hero />
           <Products />
+          <PlanetExploration />
           <HowItWorks />
-          <FeaturedRetailer />
+          <BestSellers />
           <Reviews />
+          <FeaturedRetailer />
+          <FunForAllAges />
           <Newsletter />
         </main>
         <Footer />

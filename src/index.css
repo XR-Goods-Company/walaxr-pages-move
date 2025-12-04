@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,48 +6,45 @@
 
 @layer base {
   :root {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 210 100% 50%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 270 60% 50%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 217 32% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 180 100% 50%;
-    --accent-foreground: 222 47% 6%;
+    --accent: 210 100% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217 32% 20%;
-    --input: 217 32% 17%;
-    --ring: 210 100% 50%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 100% 45%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Custom design tokens */
-    --gradient-hero: linear-gradient(135deg, hsl(222 47% 6%) 0%, hsl(250 50% 12%) 50%, hsl(222 47% 6%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(222 47% 10%) 0%, hsl(222 47% 6%) 100%);
-    --gradient-button: linear-gradient(135deg, hsl(210 100% 50%) 0%, hsl(270 60% 50%) 100%);
-    --gradient-glow: radial-gradient(circle, hsl(210 100% 50% / 0.3) 0%, transparent 70%);
-    --gradient-accent: linear-gradient(90deg, hsl(180 100% 50%) 0%, hsl(210 100% 50%) 100%);
+    /* Brand colors */
+    --brand-blue: 210 100% 45%;
+    --brand-dark: 222 47% 11%;
     
-    --shadow-glow: 0 0 40px hsl(210 100% 50% / 0.3);
-    --shadow-glow-lg: 0 0 80px hsl(210 100% 50% / 0.4);
-    --shadow-card: 0 8px 32px hsl(222 47% 4% / 0.5);
-    
-    --font-display: 'Orbitron', sans-serif;
+    /* Announcement bar */
+    --announcement-bg: 210 100% 45%;
+    --announcement-text: 0 0% 100%;
+
+    --font-display: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
 
     --sidebar-background: 0 0% 98%;
@@ -73,8 +70,6 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
-    background: var(--gradient-hero);
-    background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -83,95 +78,27 @@
 }
 
 @layer components {
-  .glow-effect {
-    position: relative;
-  }
-  
-  .glow-effect::before {
-    content: '';
-    position: absolute;
-    inset: -2px;
-    background: var(--gradient-button);
-    border-radius: inherit;
-    filter: blur(15px);
-    opacity: 0.5;
-    z-index: -1;
-    transition: opacity 0.3s ease;
-  }
-  
-  .glow-effect:hover::before {
-    opacity: 0.8;
+  .announcement-bar {
+    @apply bg-primary text-primary-foreground py-2 text-center text-sm font-medium;
   }
 
   .text-gradient {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    @apply text-primary;
   }
 
-  .card-glow {
-    box-shadow: var(--shadow-card);
-    transition: all 0.3s ease;
+  .product-card {
+    @apply bg-card rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg;
   }
 
-  .card-glow:hover {
-    box-shadow: var(--shadow-glow);
-    transform: translateY(-4px);
+  .product-card:hover img {
+    @apply scale-105;
   }
 
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+  .category-link {
+    @apply text-foreground font-medium hover:text-primary transition-colors;
   }
 
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+  .section-title {
+    @apply font-display text-2xl md:text-3xl font-bold text-foreground;
   }
-
-  .animate-shimmer {
-    animation: shimmer 2s linear infinite;
-    background-size: 200% 100%;
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px hsl(210 100% 50% / 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px hsl(210 100% 50% / 0.6);
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
 }

@@ -1,6 +1,7 @@
 import productSpace from "@/assets/product-space.jpg";
 import productDino from "@/assets/product-dino.jpg";
 import productDragon from "@/assets/product-dragon.jpg";
+import productTiger from "@/assets/product-tiger.jpg";
 import productAlien from "@/assets/product-alien.jpg";
 import productUnicorn from "@/assets/product-unicorn.jpg";
 import productSpaceHoodie from "@/assets/product-space-hoodie.jpg";
@@ -25,22 +26,10 @@ const youthProducts = [
     href: "https://www.walaxr.com/products/xr-reality-collection-year-of-the-dragon-unisex-youth-t-shirt",
   },
   {
-    name: "XR Reality Collection: Outta This World Alien (Unisex) Youth Hoodie",
-    price: "$79.00",
-    image: productAlien,
-    href: "https://www.walaxr.com/products/xr-reality-collection-outta-this-world-alien-unisex-youth-hoodie",
-  },
-  {
-    name: "XR Reality Collection: Mystical Unicorn (Unisex) Youth T-Shirt",
+    name: "XR Reality Collection: Year of the Tiger (Unisex) Youth T-Shirt",
     price: "$39.00",
-    image: productUnicorn,
-    href: "https://www.walaxr.com/products/xr-reality-collection-mystical-unicorn-unisex-youth-t-shirt",
-  },
-  {
-    name: "XR Reality Collection: Space Discovery (Unisex) Youth Hoodie",
-    price: "$79.00",
-    image: productSpaceHoodie,
-    href: "https://www.walaxr.com/products/xr-reality-collection-space-discovery-unisex-youth-hoodie",
+    image: productTiger,
+    href: "https://www.walaxr.com/products/xr-reality-collection-year-of-the-tiger-unisex-youth-t-shirt",
   },
 ];
 

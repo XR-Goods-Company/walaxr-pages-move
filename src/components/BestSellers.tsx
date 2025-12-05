@@ -1,5 +1,7 @@
 import productDino from "@/assets/product-dino.jpg";
 import productDragon from "@/assets/product-dragon.jpg";
+import productTiger from "@/assets/product-tiger.jpg";
+import productDinoToddler from "@/assets/product-dino-toddler.jpg";
 import productAlien from "@/assets/product-alien.jpg";
 import productSpaceHoodie from "@/assets/product-space-hoodie.jpg";
 
@@ -7,8 +9,14 @@ const tshirtProducts = [
   {
     name: "XR Reality Collection: Jurassic Stomp (Unisex) Toddler T-Shirt",
     price: "$39.00",
-    image: productDino,
+    image: productDinoToddler,
     href: "https://www.walaxr.com/products/xr-reality-collection-jurassic-stomp-unisex-toddler-t-shirt",
+  },
+  {
+    name: "XR Reality Collection: Jurassic Stomp (Unisex) Youth T-Shirt",
+    price: "$39.00",
+    image: productDino,
+    href: "https://www.walaxr.com/products/xr-reality-collection-jurassic-stomp-unisex-youth-t-shirt",
   },
   {
     name: "XR Reality Collection: Year of the Dragon (Unisex) Youth T-Shirt",
@@ -17,10 +25,10 @@ const tshirtProducts = [
     href: "https://www.walaxr.com/products/xr-reality-collection-year-of-the-dragon-unisex-youth-t-shirt",
   },
   {
-    name: "XR Reality Collection: Outta This World Alien (Women's) Adult Fitted T-Shirt",
+    name: "XR Reality Collection: Year of the Tiger (Unisex) Youth T-Shirt",
     price: "$39.00",
-    image: productAlien,
-    href: "https://www.walaxr.com/products/xr-reality-collection-outta-this-world-alien-womens-adult-fitted-t-shirt",
+    image: productTiger,
+    href: "https://www.walaxr.com/products/xr-reality-collection-year-of-the-tiger-unisex-youth-t-shirt",
   },
 ];
 
@@ -96,7 +104,7 @@ export function BestSellers() {
 
         {/* T-Shirts */}
         <div className="mb-12">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {tshirtProducts.map((product, index) => (
               <ProductCard key={index} product={product} />
             ))}
@@ -115,7 +123,7 @@ export function BestSellers() {
 
         {/* Hoodies */}
         <div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {hoodieProducts.map((product, index) => (
               <ProductCard key={index} product={product} />
             ))}

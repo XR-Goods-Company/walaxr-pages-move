@@ -1,12 +1,13 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, User, Search, ShoppingBag, Instagram, Facebook } from "lucide-react";
 
 const navLinks = [
-  { name: "YOUTH", href: "https://www.walaxr.com/collections/youth" },
-  { name: "TODDLER", href: "https://www.walaxr.com/collections/toddler" },
-  { name: "ADULT", href: "https://www.walaxr.com/collections/adult" },
-  { name: "WOMEN'S", href: "https://www.walaxr.com/collections/womens" },
-  { name: "ACCESSORIES", href: "https://www.walaxr.com/collections/small-items" },
+  { name: "YOUTH", href: "/collections/youth" },
+  { name: "TODDLER", href: "/collections/toddler" },
+  { name: "ADULT", href: "/collections/adult" },
+  { name: "WOMEN'S", href: "/collections/womens" },
+  { name: "ACCESSORIES", href: "/collections/accessories" },
 ];
 
 const socialLinks = [
@@ -24,15 +25,13 @@ export function Header() {
           {/* Left Navigation - Desktop */}
           <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                to={link.href}
                 className="text-xs font-semibold tracking-wide text-foreground hover:text-primary transition-colors"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -46,14 +45,14 @@ export function Header() {
           </button>
 
           {/* Center Logo */}
-          <a href="https://www.walaxr.com" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 lg:mx-auto">
+          <Link to="/" className="absolute left-1/2 -translate-x-1/2 lg:static lg:translate-x-0 lg:mx-auto">
             <div className="flex items-center">
               <span className="font-display text-3xl font-bold text-primary tracking-tight">
                 WaLa
               </span>
               <span className="text-[10px] text-primary ml-0.5 -mt-2">®</span>
             </div>
-          </a>
+          </Link>
 
           {/* Right Icons */}
           <div className="flex items-center gap-4">
@@ -92,16 +91,14 @@ export function Header() {
           <div className="lg:hidden py-4 border-t border-border">
             <nav className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  to={link.href}
                   className="text-sm font-semibold text-foreground hover:text-primary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
               <a
                 href="https://www.walaxr.com/account/login"

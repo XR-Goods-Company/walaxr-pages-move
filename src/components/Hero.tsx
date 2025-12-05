@@ -1,14 +1,18 @@
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
 
 export function Hero() {
   return (
     <section className="relative min-h-[80vh] flex items-end overflow-hidden">
-      {/* Hero Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      >
+      {/* Hero Video Background */}
+      <div className="absolute inset-0">
+        <video
+          className="w-full h-full object-cover"
+          src="https://cdn.shopify.com/videos/c/o/v/fc7681e0f88a46eaac19e0c95eca99b9.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
         {/* Subtle overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
       </div>

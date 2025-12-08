@@ -7,7 +7,7 @@ const navLinks = [
   { name: "TODDLER", href: "/collections/toddler" },
   { name: "ADULT", href: "/collections/adult" },
   { name: "WOMEN'S", href: "/collections/womens" },
-  { name: "ACCESSORIES", href: "/collections/accessories" },
+  { name: "ACCESSORIES", href: "/collections/small-items" },
 ];
 
 const socialLinks = [

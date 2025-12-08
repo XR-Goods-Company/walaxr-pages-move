@@ -7,6 +7,8 @@ import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
+import SearchPage from "./pages/SearchPage";
+import CartPage from "./pages/CartPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +24,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/collections/:slug" element={<CategoryPage />} />
             <Route path="/products/:id" element={<ProductPage />} />
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/cart" element={<CartPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -65,24 +65,20 @@ export function Header() {
             >
               <User className="w-5 h-5" />
             </a>
-            <a
-              href="https://www.walaxr.com/search"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/search"
               className="text-foreground hover:text-primary transition-colors hidden sm:block"
               aria-label="Search"
             >
               <Search className="w-5 h-5" />
-            </a>
-            <a
-              href="https://www.walaxr.com/cart"
-              target="_blank"
-              rel="noopener noreferrer"
+            </Link>
+            <Link
+              to="/cart"
               className="text-foreground hover:text-primary transition-colors"
               aria-label="Cart"
             >
               <ShoppingBag className="w-5 h-5" />
-            </a>
+            </Link>
           </div>
         </div>
 

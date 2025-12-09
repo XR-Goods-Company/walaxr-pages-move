@@ -19,8 +19,11 @@ const SearchPage = () => {
     return products.filter(
       (product) =>
         product.name.toLowerCase().includes(term) ||
+        product.shortName.toLowerCase().includes(term) ||
         product.category.toLowerCase().includes(term) ||
-        product.description?.toLowerCase().includes(term)
+        product.description?.toLowerCase().includes(term) ||
+        product.colors.some(color => color.toLowerCase().includes(term)) ||
+        product.sizes.some(size => size.toLowerCase().includes(term))
     );
   }, [searchTerm]);
 

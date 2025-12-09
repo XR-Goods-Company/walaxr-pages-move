@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, User, Search, ShoppingBag, Instagram, Facebook } from "lucide-react";
+import { Menu, X, Search, ShoppingBag, Instagram, Facebook } from "lucide-react";
 
 const navLinks = [
   { name: "YOUTH", href: "/collections/youth" },
@@ -56,18 +56,9 @@ export function Header() {
 
           {/* Right Icons */}
           <div className="flex items-center gap-4">
-            <a
-              href="https://www.walaxr.com/account/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground hover:text-primary transition-colors hidden sm:block"
-              aria-label="Log in"
-            >
-              <User className="w-5 h-5" />
-            </a>
             <Link
               to="/search"
-              className="text-foreground hover:text-primary transition-colors hidden sm:block"
+              className="text-foreground hover:text-primary transition-colors"
               aria-label="Search"
             >
               <Search className="w-5 h-5" />
@@ -96,14 +87,6 @@ export function Header() {
                   {link.name}
                 </Link>
               ))}
-              <a
-                href="https://www.walaxr.com/account/login"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-semibold text-foreground hover:text-primary transition-colors"
-              >
-                Log in
-              </a>
               <div className="flex items-center gap-4 pt-4 border-t border-border">
                 {socialLinks.map((social) => (
                   <a

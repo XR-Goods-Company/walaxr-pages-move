@@ -36,32 +36,34 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="py-8 bg-background border-t border-border">
+    <footer className="py-6 bg-background border-t border-border">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="font-display text-2xl font-bold text-primary">WaLa</span>
-            <span className="text-[8px] text-primary ml-0.5 -mt-2">®</span>
-            <span className="text-sm text-muted-foreground ml-2">XR</span>
+            <span className="font-display text-xl font-bold text-foreground">WaLa</span>
+            <span className="text-sm text-muted-foreground ml-1">XR</span>
           </div>
 
-          {/* Links */}
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="https://www.walaxr.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-              www.walaxr.com
-            </a>
-          </div>
+          {/* Website Link */}
+          <a 
+            href="https://www.walaxr.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            www.walaxr.com
+          </a>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label={social.label}
               >
                 {social.isCustom ? (
@@ -72,16 +74,6 @@ export function Footer() {
               </a>
             ))}
           </div>
-        </div>
-
-        <div className="mt-8 pt-4 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© {new Date().getFullYear()} WaLa XR. All rights reserved.</p>
-          <p className="mt-2 text-xs">
-            This is a static archive. For purchases, visit{" "}
-            <a href="https://www.walaxr.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-              walaxr.com
-            </a>
-          </p>
         </div>
       </div>
     </footer>

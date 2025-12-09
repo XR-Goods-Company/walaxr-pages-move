@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Search, ShoppingBag, Instagram, Facebook } from "lucide-react";
+import { Menu, X, ShoppingBag, Instagram, Facebook } from "lucide-react";
 
 const navLinks = [
   { name: "YOUTH", href: "/collections/youth" },
@@ -56,13 +56,6 @@ export function Header() {
 
           {/* Right Icons */}
           <div className="flex items-center gap-4">
-            <Link
-              to="/search"
-              className="text-foreground hover:text-primary transition-colors"
-              aria-label="Search"
-            >
-              <Search className="w-5 h-5" />
-            </Link>
             <Link
               to="/cart"
               className="text-foreground hover:text-primary transition-colors"

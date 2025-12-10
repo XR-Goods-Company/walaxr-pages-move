@@ -104,7 +104,7 @@ export function BestSellers() {
 
         {/* T-Shirts */}
         <div className="mb-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
             {tshirtProducts.map((product, index) => (
               <ProductCard key={index} product={product} />
             ))}
@@ -123,7 +123,7 @@ export function BestSellers() {
 
         {/* Hoodies */}
         <div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
             {hoodieProducts.map((product, index) => (
               <ProductCard key={index} product={product} />
             ))}

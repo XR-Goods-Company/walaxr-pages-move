@@ -19,7 +19,7 @@ const Index = () => {
         <title>WaLa XR | Augmented Reality Apparel - Scan. Click. Wow!</title>
         <meta name="description" content="Experience the magic of augmented reality apparel. Scan the QR code on your WaLa shirt and watch it come to life with stunning XR experiences - no app required!" />
         <meta name="keywords" content="WaLa XR, XR apparel, augmented reality clothing, AR shirts, XR shirts, interactive clothing" />
-        <link rel="canonical" href="https://walaxr.com" />
+        <link rel="canonical" href="https://xr-goods-company.github.io/walaxr-pages-move/" />
       </Helmet>
       
       <div className="min-h-screen">

@@ -5,8 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Set base to your repo name for GitHub Pages
-  base: process.env.GITHUB_ACTIONS ? '/walaxr-pages-move/' : '/',
+  // Use a relative base in production so the same build works on both:
+  // - custom domains (served from "/")
+  // - GitHub project pages (served from "/<repo>/")
+  base: mode === "development" ? "/" : "./",
   server: {
     host: "::",
     port: 8080,

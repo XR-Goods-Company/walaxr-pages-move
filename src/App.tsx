@@ -12,25 +12,42 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <HelmetProvider>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/collections/:slug" element={<CategoryPage />} />
-            <Route path="/products/:id" element={<ProductPage />} />
-            <Route path="/cart" element={<CartPage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </HelmetProvider>
-);
+const getRouterBasename = () => {
+  if (typeof window === "undefined") return "/";
+
+  // GitHub Project Pages serve the app from "/<repo>/".
+  // Custom domains serve from root "/".
+  if (window.location.hostname.endsWith("github.io")) {
+    const firstSegment = window.location.pathname.split("/").filter(Boolean)[0];
+    return firstSegment ? `/${firstSegment}` : "/";
+  }
+
+  return "/";
+};
+
+const App = () => {
+  const basename = getRouterBasename();
+
+  return (
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter basename={basename}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/collections/:slug" element={<CategoryPage />} />
+              <Route path="/products/:id" element={<ProductPage />} />
+              <Route path="/cart" element={<CartPage />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>
+  );
+};
 
 export default App;
